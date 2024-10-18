@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import React from "react";
 import Image from "next/image";
 import initTranslations from '../i18n';
 
