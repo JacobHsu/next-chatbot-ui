@@ -1,6 +1,18 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import Image from "next/image";
+import initTranslations from '../i18n';
+
+interface HomeProps {
+  params: {
+    locale: string;
+  };
+}
+
+export default async function Home({ params: { locale } }: HomeProps) {
+  const { t } = await initTranslations(locale, ['home']);
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
@@ -20,7 +32,7 @@ export default function Home() {
             </code>
             .
           </li>
-          <li>Save and see your changes instantly.</li>
+          <li>{t('lang')} Save and see your changes instantly.</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">

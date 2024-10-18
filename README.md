@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-`npx create-next-app@latest`  
+ [start-a-new-react-project](https://react.dev/learn/start-a-new-react-project) `npx create-next-app@latest`  
 ✔ Would you like to use `src/` directory? … `No` / Yes  
 
 First, run the development server:
