@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.19.0",
+    "clsx": "^2.1.1",
     "i18next": "^23.16.0",
     "i18next-resources-to-backend": "^1.2.1",
     "next": "14.2.15",
@@ -17,7 +18,8 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-i18next": "^15.0.3"
+    "react-i18next": "^15.0.3",
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,6 +1,6 @@
 "use client"
 
-
+import { Dashboard } from "@/components/ui/dashboard"
 import { useParams, useRouter, useSearchParams } from "next/navigation"
 import { ReactNode, useContext, useEffect, useState } from "react"
 import Loading from "../loading"
@@ -25,12 +25,12 @@ export default function WorkspaceLayout({ children }: WorkspaceLayoutProps) {
   const fetchWorkspaceData = async (workspaceId: string) => {
     setLoading(true)
 
-    // setLoading(false)
+    setLoading(false)
   }
 
   if (loading) {
     return <Loading />
   }
 
-  // return <Dashboard>{children}</Dashboard>
+  return <Dashboard>{children}</Dashboard>
 }
