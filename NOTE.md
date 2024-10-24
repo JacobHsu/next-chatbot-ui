@@ -8,3 +8,16 @@
 
 [@radix-ui/react-tabs](https://www.radix-ui.com/primitives/docs/components/tabs)  
 [@radix-ui/react-tooltip](https://www.radix-ui.com/primitives/docs/components/tooltip)  
+
+
+### icons-react
+
+```js
+import {
+  IconFile,
+  IconMessage,
+  IconPencil,
+} from "@tabler/icons-react"
+```
+
+[IconPencil](https://tabler.io/icons/icon/pencil)
