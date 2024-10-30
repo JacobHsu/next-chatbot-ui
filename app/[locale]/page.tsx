@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect, useState } from 'react';
 import { ChatbotUISVG } from "@/components/icons/chatbotui-svg"
 import { IconArrowRight } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
@@ -11,9 +12,23 @@ interface HomeProps {
   };
 }
 
-export default async function Home({ params: { locale } }: HomeProps) {
+export default function Home({ params: { locale } }: HomeProps) {
   const { theme } = useTheme();
-  const { t } = await initTranslations(locale, ['home']);
+  const [t, setT] = useState<(key: string) => string | null>();
+
+  useEffect(() => {
+    const fetchTranslations = async () => {
+      const { t } = await initTranslations(locale, ['home']);
+      setT(() => t);
+    };
+
+    fetchTranslations();
+  }, [locale]);
+
+  if (!t) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="flex size-full flex-col items-center justify-center p-8 sm:p-20">
       <div>

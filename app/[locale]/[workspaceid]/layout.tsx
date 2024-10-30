@@ -1,8 +1,8 @@
 "use client"
 
 import { Dashboard } from "@/components/ui/dashboard"
-import { useParams, useRouter, useSearchParams } from "next/navigation"
-import { ReactNode, useContext, useEffect, useState } from "react"
+// import { useParams } from "next/navigation"
+import { ReactNode, useEffect, useState } from "react"
 import Loading from "../loading"
 
 interface WorkspaceLayoutProps {
@@ -10,19 +10,19 @@ interface WorkspaceLayoutProps {
 }
 
 export default function WorkspaceLayout({ children }: WorkspaceLayoutProps) {
-  const router = useRouter()
+  // const router = useRouter()
 
-  const params = useParams()
-  const searchParams = useSearchParams()
-  const workspaceId = params.workspaceid as string
+  // const params = useParams()
+  // const searchParams = useSearchParams()
+  // const workspaceId = params.workspaceid as string
 
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    ;(async () => await fetchWorkspaceData(workspaceId))()
-  }, [workspaceId])
+    ;(async () => await fetchWorkspaceData())()
+  }, [])
 
-  const fetchWorkspaceData = async (workspaceId: string) => {
+  const fetchWorkspaceData = async () => {
     setLoading(true)
 
     setLoading(false)

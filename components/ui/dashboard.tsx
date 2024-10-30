@@ -3,7 +3,7 @@
 import { SidebarSwitcher } from "@/components/sidebar/sidebar-switcher"
 // import { Button } from "@/components/ui/button"
 import { Tabs } from "@/components/ui/tabs"
-// import useHotkey from "@/lib/hooks/use-hotkey"
+import useHotkey from "@/lib/hooks/use-hotkey"
 import { cn } from "@/lib/utils" // 可能代表 class names
 import { ContentType } from "@/types"
 // import { IconChevronCompactRight } from "@tabler/icons-react"
@@ -18,8 +18,9 @@ interface DashboardProps {
   children: React.ReactNode
 }
 
-export const Dashboard: FC<DashboardProps> = ({ children }) => {
-  // useHotkey("s", () => setShowSidebar(prevState => !prevState))
+export const Dashboard: FC<DashboardProps> = ({}) => {
+  useHotkey("s", () => setShowSidebar(prevState => !prevState))
+
   const pathname = usePathname()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -32,13 +33,13 @@ export const Dashboard: FC<DashboardProps> = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(
     localStorage.getItem("showSidebar") === "true"
   )
-  const [isDragging, setIsDragging] = useState(false)
+  // const [isDragging, setIsDragging] = useState(false)
 
 
-  const handleToggleSidebar = () => {
-    setShowSidebar(prevState => !prevState)
-    localStorage.setItem("showSidebar", String(!showSidebar))
-  }
+  // const handleToggleSidebar = () => {
+  //   setShowSidebar(prevState => !prevState)
+  //   localStorage.setItem("showSidebar", String(!showSidebar))
+  // }
 
   return (
     <div className="flex size-full">
