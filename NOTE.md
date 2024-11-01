@@ -9,7 +9,8 @@
 
 [@radix-ui/react-tabs](https://www.radix-ui.com/primitives/docs/components/tabs)  
 [@radix-ui/react-tooltip](https://www.radix-ui.com/primitives/docs/components/tooltip)  
-[@radix-ui/react-slot](https://www.radix-ui.com/primitives/docs/utilities/slot)  
+[@radix-ui/react-slot](https://www.radix-ui.com/primitives/docs/utilities/slot)   
+[@radix-ui/react-dropdown-menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)  
 
 
 ### icons-react

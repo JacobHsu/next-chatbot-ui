@@ -18,7 +18,7 @@ interface DashboardProps {
   children: React.ReactNode
 }
 
-export const Dashboard: FC<DashboardProps> = ({}) => {
+export const Dashboard: FC<DashboardProps> = ({ children }) => {
   useHotkey("s", () => setShowSidebar(prevState => !prevState))
 
   const pathname = usePathname()
@@ -75,6 +75,7 @@ export const Dashboard: FC<DashboardProps> = ({}) => {
       <div
         className="bg-muted/50 relative flex w-screen min-w-[90%] grow flex-col sm:min-w-fit"
       >
+        {children}
         <Button
           className={cn(
             "absolute left-[4px] top-[50%] z-10 size-[32px] cursor-pointer"

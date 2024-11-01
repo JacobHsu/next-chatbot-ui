@@ -2,6 +2,7 @@ import Loading from "@/app/[locale]/loading"
 import { useScroll } from "./chat-hooks/use-scroll"
 // import { useParams } from "next/navigation"
 import { FC, useEffect, useState } from "react"
+import { ChatHelp } from "./chat-help"
 
 type ChatUIProps = object;
 
@@ -32,6 +33,9 @@ export const ChatUI: FC<ChatUIProps> = ({}) => {
         <div ref={messagesEndRef} />
       </div>
 
+      <div className="absolute bottom-2 right-2 hidden md:block lg:bottom-4 lg:right-4">
+        <ChatHelp />
+      </div>
     </div>
   )
 }
