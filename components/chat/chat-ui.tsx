@@ -1,11 +1,16 @@
 import Loading from "@/app/[locale]/loading"
-
+import { useScroll } from "./chat-hooks/use-scroll"
 // import { useParams } from "next/navigation"
 import { FC, useEffect, useState } from "react"
 
 type ChatUIProps = object;
 
 export const ChatUI: FC<ChatUIProps> = ({}) => {
+
+  const {
+    messagesStartRef,
+    messagesEndRef
+  } = useScroll()
 
   const [loading, setLoading] = useState(true)
 
@@ -23,6 +28,8 @@ export const ChatUI: FC<ChatUIProps> = ({}) => {
       <div
         className="flex size-full flex-col overflow-auto border-b"
       >
+        <div ref={messagesStartRef} />
+        <div ref={messagesEndRef} />
       </div>
 
     </div>
